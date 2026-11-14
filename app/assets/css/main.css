@@ -1,0 +1,146 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-navy: #101c2c;
+  --color-navy-soft: #1c3448;
+  --color-gold: #c5a46d;
+  --color-ivory: #f5f3ef;
+  --color-white: #ffffff;
+  --color-bg: #f7f5f1;
+  --color-surface: #ffffff;
+  --color-text: #1a2433;
+  --color-text-muted: #4a5568;
+  --color-border: rgba(16, 28, 44, 0.1);
+  --container-max: 90rem;
+  --font-body: 400;
+  --font-heading: 600;
+  --leading-body: 1.8;
+}
+
+html.dark {
+  --color-bg: #101c2c;
+  --color-surface: #1c3448;
+  --color-text: #f0eeea;
+  --color-text-muted: rgba(245, 243, 239, 0.72);
+  --color-border: rgba(245, 243, 239, 0.14);
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  /* Soft stack: Cairo when ready, else comfortable system Arabic */
+  font-family: Cairo, "Segoe UI", Tahoma, "Noto Naskh Arabic", Arial, sans-serif;
+  font-weight: var(--font-body);
+  line-height: var(--leading-body);
+  letter-spacing: 0.01em;
+  font-synthesis: none; /* prevent faux-bold that looks harsh */
+}
+
+p,
+li,
+label,
+input,
+textarea,
+select {
+  font-weight: 400;
+  line-height: 1.8;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: var(--font-heading);
+  letter-spacing: 0;
+  line-height: 1.35;
+  text-wrap: pretty;
+}
+
+/* Soften Tailwind weight utilities site-wide (eye comfort) */
+.font-bold {
+  font-weight: 600 !important;
+}
+
+.font-semibold {
+  font-weight: 500 !important;
+}
+
+.font-medium {
+  font-weight: 500 !important;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+}
+
+/* Outline / ghost CTAs stay gold on navy panels */
+a.app-button--secondary,
+button.app-button--secondary,
+.app-button.app-button--secondary {
+  color: #c5a46d !important;
+  border-color: #c5a46d !important;
+}
+
+a.app-button--ghost,
+button.app-button--ghost,
+.app-button.app-button--ghost {
+  color: #c5a46d !important;
+}
+
+.skip-link {
+  position: absolute;
+  inset-inline-start: 1rem;
+  top: -3rem;
+  z-index: 100;
+  border-radius: 999px;
+  background: var(--color-gold);
+  color: var(--color-navy);
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* Visible by default until JS binds animation — prevents disappeared sections */
+.reveal-on-scroll {
+  opacity: 1;
+  transform: none;
+}
+
+.reveal-on-scroll[data-reveal-bound]:not(.is-visible) {
+  opacity: 0;
+  transform: translateY(8px);
+  transition:
+    opacity 0.22s ease,
+    transform 0.22s ease;
+}
+
+.reveal-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 0.22s ease,
+    transform 0.22s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-on-scroll,
+  .reveal-on-scroll[data-reveal-bound]:not(.is-visible) {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" fill="none">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#1C3448"/><stop offset="1" stop-color="#101C2C"/></linearGradient></defs>
+<rect width="640" height="360" fill="url(#g)"/>
+<rect x="60" y="180" width="40" height="120" fill="#C5A46D" opacity=".8"/>
+<rect x="120" y="140" width="50" height="160" fill="#F5F3EF" opacity=".25"/>
+<rect x="190" y="100" width="45" height="200" fill="#C5A46D" opacity=".45"/>
+<rect x="260" y="150" width="70" height="150" fill="#F5F3EF" opacity=".2"/>
+<rect x="360" y="120" width="55" height="180" fill="#C5A46D" opacity=".35"/>
+<rect x="440" y="160" width="90" height="140" fill="#F5F3EF" opacity=".18"/>
+<text x="40" y="50" fill="#F5F3EF" font-family="Arial, sans-serif" font-size="28" font-weight="700">dubai</text>
+</svg>
