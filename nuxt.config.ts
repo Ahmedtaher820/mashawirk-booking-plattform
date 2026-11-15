@@ -29,7 +29,11 @@ export default defineNuxtConfig({
       ],
       meta: [
         { name: 'theme-color', content: '#101C2C' },
-        { name: 'format-detection', content: 'telephone=no' }
+        { name: 'format-detection', content: 'telephone=no' },
+        {
+          name: 'google-site-verification',
+          content: 'XCioJI4fU0GX2kVOJLk9TKkYDDUFW95gHkAhKxrL0rI'
+        }
       ]
     }
   },
