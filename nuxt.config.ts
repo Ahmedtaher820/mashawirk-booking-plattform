@@ -40,7 +40,7 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
-      siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://mashawirk.com',
+      siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://www.mashawirk.com',
       whatsappPhone: process.env.NUXT_PUBLIC_WHATSAPP_PHONE || '971544313696',
       contactPhoneDisplay: process.env.NUXT_PUBLIC_CONTACT_PHONE_DISPLAY || '+971 54 431 3696',
       companyAddressAr: 'القصيص، دبي',
@@ -72,7 +72,7 @@ export default defineNuxtConfig({
     restructureDir: 'i18n',
     // Avoid root redirect hop (hurts Lighthouse). Users switch language manually.
     detectBrowserLanguage: false,
-    baseUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://mashawirk.com'
+    baseUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://www.mashawirk.com'
   },
 
   pinia: {
