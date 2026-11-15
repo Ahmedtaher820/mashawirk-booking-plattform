@@ -1,4 +1,10 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mashawirk.ae/sitemap.xml
+# Block noisy/non-content paths
+Disallow: /api/
+Disallow: /_nuxt/
+Disallow: /_payload.json
+
+Sitemap: https://mashawirk.com/sitemap.xml
+Host: https://mashawirk.com

@@ -4,7 +4,7 @@ export const useWhatsapp = () => {
   const config = useRuntimeConfig()
 
   const normalizedPhone = computed(() => {
-    return String(config.public.whatsappPhone || '971500000000').replace(/\D/g, '')
+    return String(config.public.whatsappPhone || '971544313696').replace(/\D/g, '')
   })
 
   const buildWhatsappUrl = (options: WhatsAppLinkOptions = {}) => {

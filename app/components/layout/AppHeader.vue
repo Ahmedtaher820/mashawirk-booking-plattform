@@ -41,6 +41,7 @@ import type { NavLinkItem } from '~/interfaces/shared'
 //#region Variables
 const { t } = useI18n()
 const localePath = useLocalePath()
+const config = useRuntimeConfig()
 const isMenuOpen = ref(false)
 
 const links = computed<NavLinkItem[]>(() => [
@@ -149,7 +150,7 @@ const closeMenu = () => {
       <PwaInstallButton block label-key="actions.installApp" />
       <WhatsAppButton block />
       <p class="app-header__mobile-phone">
-        +971 50 000 0000
+        {{ config.public.contactPhoneDisplay }}
       </p>
     </div>
   </header>

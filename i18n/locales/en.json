@@ -13,7 +13,8 @@
     "privacy": "Privacy Policy",
     "terms": "Terms & Conditions",
     "openMenu": "Open menu",
-    "closeMenu": "Close menu"
+    "closeMenu": "Close menu",
+    "skipToContent": "Skip to content"
   },
   "actions": {
     "bookWhatsapp": "Book on WhatsApp",
@@ -31,12 +32,12 @@
     "gotIt": "OK"
   },
   "home": {
-    "seoTitle": "Mashawirk | Parcel, order & supplies delivery in the UAE",
-    "seoDescription": "Mashawirk delivers parcels, orders and supplies across the UAE, with international delivery requests to Saudi Arabia, Oman and Qatar. Book easily on WhatsApp.",
-    "seoKeywords": "parcel delivery UAE, package delivery Dubai, supplies delivery, light goods transport, delivery to Saudi Arabia Oman Qatar, Mashawirk WhatsApp booking",
+    "seoTitle": "Mashawirk | UAE & international delivery | Parcels, trips & car lift",
+    "seoDescription": "Mashawirk delivers parcels, orders and supplies across the UAE (Dubai, Abu Dhabi, Sharjah, Ajman, RAK, Fujairah, UAQ), plus international delivery to Saudi Arabia, Oman and Qatar, with private trips and car-lift. Book on WhatsApp +971544313696.",
+    "seoKeywords": "Mashawirk, parcel delivery UAE, package delivery Dubai, inter-emirate delivery, same day delivery Dubai, fast courier Dubai, supplies delivery Dubai, light goods transport Dubai, furniture light move Dubai no workers, gift delivery Dubai, VIP delivery UAE, pet delivery Dubai, car lift UAE, car lift Dubai, private driver Dubai, passenger transport UAE, delivery Abu Dhabi, delivery Sharjah, delivery Ajman, delivery Ras Al Khaimah, delivery Fujairah, delivery Umm Al Quwain, Dubai to Sharjah delivery, Dubai to Abu Dhabi delivery, Al Qusais delivery, Deira delivery, Barsha delivery, Jebel Ali delivery, WhatsApp delivery booking UAE, courier number Dubai, delivery to Saudi Arabia from UAE, Riyadh delivery from Dubai, Oman delivery from UAE, Qatar delivery from Dubai, GCC road shipping, cheap delivery UAE, reliable courier Dubai",
     "heroEyebrow": "Order and supplies delivery at a premium standard",
     "heroTitle": "Mashawirk for your orders and supplies",
-    "heroText": "We move parcels, orders and light goods across the UAE, with international delivery requests to Saudi Arabia, Oman and Qatar. Booking is easy on WhatsApp.",
+    "heroText": "We move parcels, orders and light goods across the UAE, with international delivery to Saudi Arabia, Oman and Qatar, plus private trips and car-lift when needed. Booking is easy on WhatsApp.",
     "whyTitle": "A dependable choice. Clearer delivery.",
     "whyText": "Mashawirk focuses on parcels, orders and supplies, with fast WhatsApp coordination and clear confirmation for every request.",
     "featuresTitle": "Why Mashawirk?",
@@ -78,11 +79,11 @@
     "threeText": "Quick review, then confirmation."
   },
   "services": {
-    "seoTitle": "Mashawirk services | Parcels, supplies & international delivery",
-    "seoDescription": "Explore Mashawirk services: parcel and order delivery, supplies, light goods transport, and international delivery to Saudi Arabia, Oman and Qatar.",
-    "seoKeywords": "delivery services UAE, parcel delivery, supplies transport, international delivery Saudi Oman Qatar, light goods no loading workers",
+    "seoTitle": "Mashawirk services | Parcels, car lift & UAE/international delivery",
+    "seoDescription": "Mashawirk services: parcel and supplies delivery across all Emirates, international delivery to Saudi Arabia, Oman and Qatar, light goods without workers, gifts, VIP, pets, and car-lift/passenger trips.",
+    "seoKeywords": "delivery services UAE, parcel delivery Dubai, supplies transport UAE, international delivery Saudi Oman Qatar, light goods no loading workers, car lift Dubai, private trips Dubai, gift delivery Dubai, VIP delivery UAE, pet delivery UAE, inter emirate courier, Abu Dhabi courier, Sharjah delivery service",
     "pageTitle": "Our services",
-    "pageText": "Practical delivery services across the UAE, with international options and passenger trips as a secondary service.",
+    "pageText": "Practical delivery across the UAE and nearby countries, with car-lift and passenger trips as a secondary option when needed.",
     "ordersTitle": "Parcel & order delivery",
     "ordersText": "Careful delivery for parcels and daily orders with WhatsApp follow-up.",
     "suppliesTitle": "Supplies & items delivery",
@@ -168,9 +169,9 @@
     "desktopImageAlt": "Steps to install Mashawirk on a laptop"
   },
   "about": {
-    "seoTitle": "About us | Mashawirk delivery in the UAE",
-    "seoDescription": "Learn about Mashawirk: parcel, order and supplies delivery in the UAE with international options.",
-    "seoKeywords": "about Mashawirk, Dubai delivery company, UAE parcel delivery",
+    "seoTitle": "About us | Mashawirk UAE delivery & car lift",
+    "seoDescription": "Learn about Mashawirk in Al Qusais, Dubai: parcel and supplies delivery in the UAE, international options, and private trips / car lift.",
+    "seoKeywords": "about Mashawirk, Dubai delivery company, UAE parcel delivery, Al Qusais Dubai, car lift UAE",
     "eyebrow": "Mashawirk · Al Qusais, Dubai",
     "title": "About us",
     "lead": "Mashawirk exists to make delivery clearer and calmer — from the first WhatsApp message to handoff.",
@@ -197,9 +198,9 @@
     "ctaText": "Send your request details on WhatsApp and we will confirm delivery with you quickly."
   },
   "contact": {
-    "seoTitle": "Contact us | Mashawirk",
-    "seoDescription": "Contact Mashawirk on WhatsApp or phone. Based in Al Qusais, Dubai.",
-    "seoKeywords": "contact Mashawirk, Dubai delivery WhatsApp, Al Qusais delivery",
+    "seoTitle": "Contact us | Mashawirk Dubai delivery WhatsApp",
+    "seoDescription": "Contact Mashawirk on WhatsApp or phone +971544313696 to book parcel delivery, a trip, or car lift. Based in Al Qusais, Dubai.",
+    "seoKeywords": "contact Mashawirk, Dubai delivery WhatsApp, book delivery WhatsApp, Al Qusais delivery, Dubai courier number, +971544313696, Mashawirk phone",
     "title": "Contact us",
     "text": "We are here to help with delivery requests and questions.",
     "phoneLabel": "Phone",
@@ -207,9 +208,9 @@
     "whatsappLabel": "WhatsApp"
   },
   "faq": {
-    "seoTitle": "FAQ | Mashawirk",
-    "seoDescription": "Common questions about Mashawirk parcel delivery, light goods and international requests.",
-    "seoKeywords": "parcel delivery FAQ, Mashawirk international delivery, no loading workers",
+    "seoTitle": "FAQ | Mashawirk UAE delivery & trips",
+    "seoDescription": "Common questions about UAE parcel delivery, international delivery, light goods without workers, and WhatsApp trip booking.",
+    "seoKeywords": "parcel delivery FAQ, UAE delivery FAQ, international delivery Mashawirk, no loading workers, WhatsApp trip booking",
     "title": "FAQ",
     "q1": "Is booking done on WhatsApp?",
     "a1": "Yes. WhatsApp is the primary booking channel for confirmation.",

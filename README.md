@@ -27,16 +27,25 @@ Open `http://127.0.0.1:4317`
 ## Useful env vars
 
 ```bash
-NUXT_PUBLIC_SITE_URL=https://mashawirk.ae
-NUXT_PUBLIC_WHATSAPP_PHONE=971500000000
-NUXT_PUBLIC_CONTACT_PHONE_DISPLAY="+971 50 000 0000"
+NUXT_PUBLIC_SITE_URL=https://mashawirk.com
+NUXT_PUBLIC_WHATSAPP_PHONE=971544313696
+NUXT_PUBLIC_CONTACT_PHONE_DISPLAY="+971 54 431 3696"
 ```
+
+## Agent prompt
+
+Paste-ready kickoff prompt (Arabic + rules): [`docs/READY_PROMPT.md`](docs/READY_PROMPT.md)
+
+## Deploy to your domain
+
+See [`docs/DEPLOY_DOMAIN.md`](docs/DEPLOY_DOMAIN.md) for SEO files, env vars, sitemap/robots, and Search Console steps.
 
 ## Performance notes
 
-- Images ship as **WebP** and go through **`@nuxt/image` (NuxtImg)** with responsive `sizes` / `srcset`
+- Images ship as **static WebP** under `public/images/` (no IPX)
 - Below-fold sections use **Lazy\*** components + `hydrate-on-visible` / `hydrate-on-idle`
-- Hero image is eager + preload (LCP); coverage / PWA screenshots are `loading="lazy"`
+- Hero image is eager + preload (LCP); coverage cards use tiny `*-card.webp` with `loading="lazy"`
+- Key routes are prerendered; speculative modulepreload/prefetch hints are stripped for mobile PSI
 
 ## Scripts
 

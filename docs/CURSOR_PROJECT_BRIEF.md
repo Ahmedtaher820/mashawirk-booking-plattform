@@ -8,9 +8,11 @@ Use this prompt for any future Cursor session on this project.
 
 **Name:** Mashawirk / مشاويرك  
 **Type:** Premium bilingual UAE transportation & delivery website + PWA  
-**Stack:** Nuxt 4 + Vue 3 + TypeScript + Tailwind CSS + Pinia + VueUse + Nuxt i18n + PWA  
+**Stack:** Nuxt 4 + Vue 3 + TypeScript + Tailwind CSS + Pinia + Nuxt i18n + Vite PWA  
 **Rendering:** SSR for all user-facing pages (SEO-critical). Do not set `ssr: false` on public pages.  
-**No Vuetify.** Use Tailwind only for layout/UI.
+**No Vuetify.** Use Tailwind + scoped SCSS only.  
+**No `@nuxt/image` / IPX** — use static WebP under `public/images/`.  
+**Soft typography:** Cairo weights 400/500/600 only; no harsh bold / faux-bold.
 
 ---
 
@@ -38,7 +40,7 @@ Services (priority order):
 WhatsApp is the **primary** booking channel. Website forms are secondary.  
 All booking requests require company confirmation.  
 Do not invent prices, fleet size, testimonials, or fake stats.  
-Temporary phone: `+971 50 000 0000`  
+Temporary phone: `+971 54 431 3696`  
 Address: القصيص، دبي (Al Qusais, Dubai)
 
 ---
