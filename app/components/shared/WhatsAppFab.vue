@@ -34,7 +34,7 @@
  **************************************/
 //#region Variables
 const { t } = useI18n()
-const { buildWhatsappUrl } = useWhatsapp()
+const { buildWhatsappUrl, openWhatsapp } = useWhatsapp()
 //#endregion
 
 /***************************************
@@ -70,6 +70,12 @@ const href = computed(() =>
  **** Section Functions Declaration ****
  **************************************/
 //#region Functions
+const onClick = (event: MouseEvent) => {
+  event.preventDefault()
+  openWhatsapp({
+    message: t('services.ordersMsg')
+  })
+}
 //#endregion
 </script>
 
@@ -80,6 +86,7 @@ const href = computed(() =>
     target="_blank"
     rel="noopener noreferrer"
     :aria-label="t('a11y.whatsappFab')"
+    @click="onClick"
   >
     WA
   </a>

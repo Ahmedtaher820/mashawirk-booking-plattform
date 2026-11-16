@@ -2,6 +2,7 @@ import type { WhatsAppLinkOptions } from '~/interfaces/shared'
 
 export const useWhatsapp = () => {
   const config = useRuntimeConfig()
+  const { reportConversion } = useGoogleAds()
 
   const normalizedPhone = computed(() => {
     return String(config.public.whatsappPhone || '971544313696').replace(/\D/g, '')
@@ -19,7 +20,9 @@ export const useWhatsapp = () => {
       return
     }
 
-    window.open(buildWhatsappUrl(options), '_blank', 'noopener,noreferrer')
+    const url = buildWhatsappUrl(options)
+    // Fire Google Ads conversion, then open WhatsApp
+    reportConversion(url)
   }
 
   return {

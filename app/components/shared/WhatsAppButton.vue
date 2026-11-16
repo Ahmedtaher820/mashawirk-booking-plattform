@@ -43,7 +43,7 @@ const props = withDefaults(defineProps<WhatsAppButtonProps>(), {
  **************************************/
 //#region Variables
 const { t } = useI18n()
-const { buildWhatsappUrl } = useWhatsapp()
+const { buildWhatsappUrl, openWhatsapp } = useWhatsapp()
 //#endregion
 
 /***************************************
@@ -80,6 +80,12 @@ const href = computed(() =>
  **** Section Functions Declaration ****
  **************************************/
 //#region Functions
+const onClick = (event: MouseEvent) => {
+  event.preventDefault()
+  openWhatsapp({
+    message: props.message
+  })
+}
 //#endregion
 </script>
 
@@ -91,6 +97,7 @@ const href = computed(() =>
     :block="block"
     :variant="variant"
     external
+    @click="onClick"
   />
 </template>
 

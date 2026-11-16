@@ -185,7 +185,13 @@ const submitToWhatsapp = () => {
         :label="t('form.submitWhatsapp')"
       />
 
-      <a class="home-booking-form__fallback" :href="previewWhatsappUrl" target="_blank" rel="noopener noreferrer">
+      <a
+        class="home-booking-form__fallback"
+        :href="previewWhatsappUrl"
+        target="_blank"
+        rel="noopener noreferrer"
+        @click.prevent="submitToWhatsapp"
+      >
         {{ t('actions.bookWhatsapp') }}
       </a>
     </form>
