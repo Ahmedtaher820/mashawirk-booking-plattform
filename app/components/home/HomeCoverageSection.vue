@@ -85,27 +85,49 @@ const coverageItems = computed(() => servicesStore.coverageItems)
     </div>
 
     <div class="home-coverage__grid">
-      <component
-        :is="item.landingPath ? 'NuxtLink' : 'article'"
+      <template
         v-for="item in coverageItems"
         :key="item.id"
-        class="home-coverage__card reveal-on-scroll"
-        :class="{ 'home-coverage__card--intl': item.international }"
-        v-bind="item.landingPath ? { to: localePath(item.landingPath) } : {}"
       >
-        <img
-          :src="item.image"
-          :alt="t(item.titleKey)"
-          width="400"
-          height="268"
-          loading="lazy"
-          decoding="async"
+        <!-- Real NuxtLink required: :is="'NuxtLink'" SSRs as a dead custom element (no href). -->
+        <NuxtLink
+          v-if="item.landingPath"
+          :to="localePath(item.landingPath)"
+          class="home-coverage__card reveal-on-scroll"
+          :class="{ 'home-coverage__card--intl': item.international }"
         >
-        <div class="home-coverage__panel">
-          <h3>{{ t(item.titleKey) }}</h3>
-          <p>{{ t(item.descriptionKey) }}</p>
-        </div>
-      </component>
+          <img
+            :src="item.image"
+            :alt="t(item.titleKey)"
+            width="400"
+            height="268"
+            loading="lazy"
+            decoding="async"
+          >
+          <div class="home-coverage__panel">
+            <h3>{{ t(item.titleKey) }}</h3>
+            <p>{{ t(item.descriptionKey) }}</p>
+          </div>
+        </NuxtLink>
+        <article
+          v-else
+          class="home-coverage__card reveal-on-scroll"
+          :class="{ 'home-coverage__card--intl': item.international }"
+        >
+          <img
+            :src="item.image"
+            :alt="t(item.titleKey)"
+            width="400"
+            height="268"
+            loading="lazy"
+            decoding="async"
+          >
+          <div class="home-coverage__panel">
+            <h3>{{ t(item.titleKey) }}</h3>
+            <p>{{ t(item.descriptionKey) }}</p>
+          </div>
+        </article>
+      </template>
     </div>
   </section>
 </template>
@@ -129,7 +151,7 @@ const coverageItems = computed(() => servicesStore.coverageItems)
   }
 
   &__card {
-    @apply overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] shadow-soft transition duration-300;
+    @apply block overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface)] text-inherit no-underline shadow-soft transition duration-300;
 
     img,
     :deep(img) {
@@ -143,6 +165,10 @@ const coverageItems = computed(() => servicesStore.coverageItems)
     &--intl {
       @apply ring-1 ring-gold/40;
     }
+  }
+
+  a.home-coverage__card {
+    @apply cursor-pointer;
   }
 
   &__panel {
