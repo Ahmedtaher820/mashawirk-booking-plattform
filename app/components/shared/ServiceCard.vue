@@ -88,34 +88,55 @@ const detailsTo = computed(() =>
     class="service-card reveal-on-scroll"
     :class="{
       'service-card--compact': compact,
-      'service-card--secondary': service.priority === 'secondary'
+      'service-card--secondary': service.priority === 'secondary',
+      'service-card--linked': Boolean(detailsTo)
     }"
   >
-    <div class="service-card__icon" aria-hidden="true">
-      {{ service.icon.slice(0, 1).toUpperCase() }}
-    </div>
+    <NuxtLink
+      v-if="detailsTo"
+      :to="detailsTo"
+      class="service-card__main"
+    >
+      <div class="service-card__icon" aria-hidden="true">
+        {{ service.icon.slice(0, 1).toUpperCase() }}
+      </div>
 
-    <h3 class="service-card__title">
-      {{ title }}
-    </h3>
+      <h3 class="service-card__title">
+        {{ title }}
+      </h3>
 
-    <p class="service-card__description">
-      {{ description }}
-    </p>
+      <p class="service-card__description">
+        {{ description }}
+      </p>
 
-    <p v-if="disclaimer" class="service-card__disclaimer">
-      {{ disclaimer }}
-    </p>
+      <p v-if="disclaimer" class="service-card__disclaimer">
+        {{ disclaimer }}
+      </p>
+
+      <span class="service-card__details">
+        {{ t('seoCommon.learnMore') }}
+      </span>
+    </NuxtLink>
+
+    <template v-else>
+      <div class="service-card__icon" aria-hidden="true">
+        {{ service.icon.slice(0, 1).toUpperCase() }}
+      </div>
+
+      <h3 class="service-card__title">
+        {{ title }}
+      </h3>
+
+      <p class="service-card__description">
+        {{ description }}
+      </p>
+
+      <p v-if="disclaimer" class="service-card__disclaimer">
+        {{ disclaimer }}
+      </p>
+    </template>
 
     <div class="service-card__actions">
-      <NuxtLink
-        v-if="detailsTo"
-        :to="detailsTo"
-        class="service-card__details"
-      >
-        {{ t('seoCommon.learnMore') }}
-      </NuxtLink>
-
       <WhatsAppButton
         v-if="showWhatsapp"
         class="service-card__cta"
@@ -135,6 +156,14 @@ const detailsTo = computed(() =>
     @apply opacity-95;
   }
 
+  &--linked {
+    @apply transition hover:border-gold;
+  }
+
+  &__main {
+    @apply flex flex-1 flex-col text-inherit no-underline;
+  }
+
   &__icon {
     @apply mb-4 flex h-11 w-11 items-center justify-center rounded-full bg-navy text-sm font-bold text-gold dark:bg-ivory/10;
   }
@@ -152,11 +181,15 @@ const detailsTo = computed(() =>
   }
 
   &__actions {
-    @apply mt-auto flex flex-col gap-2;
+    @apply mt-auto flex flex-col gap-2 pt-3;
   }
 
   &__details {
-    @apply text-center text-sm font-semibold text-gold underline-offset-4 hover:underline;
+    @apply mt-auto text-center text-sm font-semibold text-gold underline-offset-4;
+
+    .service-card__main:hover & {
+      @apply underline;
+    }
   }
 
   &__cta {
