@@ -12,7 +12,7 @@ NUXT_PUBLIC_CONTACT_PHONE_DISPLAY="+971 54 431 3696"
 
 2. لو الدومين مش `mashawirk.com` عدّل كمان:
    - `public/robots.txt` → سطر `Sitemap` و `Host`
-   - `public/sitemap.xml` → كل روابط `https://mashawirk.com` → دومينك
+   - `public/sitemap.xml` → كل روابط `https://www.mashawirk.com` → دومينك
 
 3. ابني للإنتاج:
 

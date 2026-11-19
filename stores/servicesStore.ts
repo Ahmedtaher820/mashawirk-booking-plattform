@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia'
 import type { CoverageItem, ServiceItem } from '~/interfaces/services'
+import { cityLandingPathById, serviceLandingPathById } from '~~/stores/seoLandingsStore'
 
 export const useServicesStore = defineStore('services', () => {
   const allServices = computed<ServiceItem[]>(() => [
@@ -9,7 +10,8 @@ export const useServicesStore = defineStore('services', () => {
       titleKey: 'services.ordersTitle',
       descriptionKey: 'services.ordersText',
       priority: 'primary',
-      whatsappMessageKey: 'services.ordersMsg'
+      whatsappMessageKey: 'services.ordersMsg',
+      landingPath: serviceLandingPathById.orders
     },
     {
       id: 'supplies',
@@ -17,7 +19,8 @@ export const useServicesStore = defineStore('services', () => {
       titleKey: 'services.suppliesTitle',
       descriptionKey: 'services.suppliesText',
       priority: 'primary',
-      whatsappMessageKey: 'services.suppliesMsg'
+      whatsappMessageKey: 'services.suppliesMsg',
+      landingPath: serviceLandingPathById.supplies
     },
     {
       id: 'light-goods',
@@ -26,7 +29,8 @@ export const useServicesStore = defineStore('services', () => {
       descriptionKey: 'services.lightGoodsText',
       disclaimerKey: 'services.lightGoodsDisclaimer',
       priority: 'primary',
-      whatsappMessageKey: 'services.lightGoodsMsg'
+      whatsappMessageKey: 'services.lightGoodsMsg',
+      landingPath: serviceLandingPathById['light-goods']
     },
     {
       id: 'international',
@@ -34,7 +38,8 @@ export const useServicesStore = defineStore('services', () => {
       titleKey: 'services.internationalTitle',
       descriptionKey: 'services.internationalText',
       priority: 'primary',
-      whatsappMessageKey: 'services.internationalMsg'
+      whatsappMessageKey: 'services.internationalMsg',
+      landingPath: serviceLandingPathById.international
     },
     {
       id: 'gifts',
@@ -42,7 +47,8 @@ export const useServicesStore = defineStore('services', () => {
       titleKey: 'services.giftsTitle',
       descriptionKey: 'services.giftsText',
       priority: 'primary',
-      whatsappMessageKey: 'services.giftsMsg'
+      whatsappMessageKey: 'services.giftsMsg',
+      landingPath: serviceLandingPathById.gifts
     },
     {
       id: 'vip',
@@ -50,7 +56,8 @@ export const useServicesStore = defineStore('services', () => {
       titleKey: 'services.vipTitle',
       descriptionKey: 'services.vipText',
       priority: 'primary',
-      whatsappMessageKey: 'services.vipMsg'
+      whatsappMessageKey: 'services.vipMsg',
+      landingPath: serviceLandingPathById.vip
     },
     {
       id: 'pets',
@@ -58,7 +65,8 @@ export const useServicesStore = defineStore('services', () => {
       titleKey: 'services.petsTitle',
       descriptionKey: 'services.petsText',
       priority: 'primary',
-      whatsappMessageKey: 'services.petsMsg'
+      whatsappMessageKey: 'services.petsMsg',
+      landingPath: serviceLandingPathById.pets
     },
     {
       id: 'passenger',
@@ -66,7 +74,26 @@ export const useServicesStore = defineStore('services', () => {
       titleKey: 'services.passengerTitle',
       descriptionKey: 'services.passengerText',
       priority: 'primary',
-      whatsappMessageKey: 'services.passengerMsg'
+      whatsappMessageKey: 'services.passengerMsg',
+      landingPath: serviceLandingPathById.passenger
+    },
+    {
+      id: 'sales-rep',
+      icon: 'sales',
+      titleKey: 'services.salesRepTitle',
+      descriptionKey: 'services.salesRepText',
+      priority: 'primary',
+      whatsappMessageKey: 'services.salesRepMsg',
+      landingPath: serviceLandingPathById['sales-rep']
+    },
+    {
+      id: 'courier',
+      icon: 'courier',
+      titleKey: 'services.courierTitle',
+      descriptionKey: 'services.courierText',
+      priority: 'primary',
+      whatsappMessageKey: 'services.courierMsg',
+      landingPath: serviceLandingPathById.courier
     }
   ])
 
@@ -78,52 +105,74 @@ export const useServicesStore = defineStore('services', () => {
       id: 'dubai',
       titleKey: 'coverage.dubai',
       descriptionKey: 'coverage.dubaiText',
-      image: '/images/coverage/dubai-card.webp'
+      image: '/images/coverage/dubai-card.webp',
+      landingPath: cityLandingPathById.dubai
     },
     {
       id: 'abudhabi',
       titleKey: 'coverage.abudhabi',
       descriptionKey: 'coverage.abudhabiText',
-      image: '/images/coverage/abudhabi-card.webp'
+      image: '/images/coverage/abudhabi-card.webp',
+      landingPath: cityLandingPathById.abudhabi
     },
     {
       id: 'sharjah',
       titleKey: 'coverage.sharjah',
       descriptionKey: 'coverage.sharjahText',
-      image: '/images/coverage/sharjah-card.webp'
+      image: '/images/coverage/sharjah-card.webp',
+      landingPath: cityLandingPathById.sharjah
     },
     {
       id: 'ajman',
       titleKey: 'coverage.ajman',
       descriptionKey: 'coverage.ajmanText',
-      image: '/images/coverage/ajman-card.webp'
+      image: '/images/coverage/ajman-card.webp',
+      landingPath: cityLandingPathById.ajman
     },
     {
-      id: 'other',
-      titleKey: 'coverage.otherEmirates',
-      descriptionKey: 'coverage.otherEmiratesText',
-      image: '/images/coverage/uae-card.webp'
+      id: 'rak',
+      titleKey: 'coverage.rak',
+      descriptionKey: 'coverage.rakText',
+      image: '/images/coverage/uae-card.webp',
+      landingPath: cityLandingPathById.rak
+    },
+    {
+      id: 'fujairah',
+      titleKey: 'coverage.fujairah',
+      descriptionKey: 'coverage.fujairahText',
+      image: '/images/coverage/uae-card.webp',
+      landingPath: cityLandingPathById.fujairah
+    },
+    {
+      id: 'uaq',
+      titleKey: 'coverage.uaq',
+      descriptionKey: 'coverage.uaqText',
+      image: '/images/coverage/uae-card.webp',
+      landingPath: cityLandingPathById.uaq
     },
     {
       id: 'saudi',
       titleKey: 'coverage.saudi',
       descriptionKey: 'coverage.internationalNote',
       image: '/images/coverage/saudi-card.webp',
-      international: true
+      international: true,
+      landingPath: '/services/international'
     },
     {
       id: 'oman',
       titleKey: 'coverage.oman',
       descriptionKey: 'coverage.internationalNote',
       image: '/images/coverage/oman-card.webp',
-      international: true
+      international: true,
+      landingPath: '/services/international'
     },
     {
       id: 'qatar',
       titleKey: 'coverage.qatar',
       descriptionKey: 'coverage.internationalNote',
       image: '/images/coverage/qatar-card.webp',
-      international: true
+      international: true,
+      landingPath: '/services/international'
     }
   ])
 

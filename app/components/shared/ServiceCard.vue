@@ -40,6 +40,7 @@ const props = withDefaults(defineProps<ServiceCardProps>(), {
  **************************************/
 //#region Variables
 const { t } = useI18n()
+const localePath = useLocalePath()
 //#endregion
 
 /***************************************
@@ -58,6 +59,9 @@ const disclaimer = computed(() =>
   props.service.disclaimerKey ? t(props.service.disclaimerKey) : ''
 )
 const message = computed(() => t(props.service.whatsappMessageKey))
+const detailsTo = computed(() =>
+  props.service.landingPath ? localePath(props.service.landingPath) : ''
+)
 //#endregion
 
 /***************************************
@@ -103,13 +107,23 @@ const message = computed(() => t(props.service.whatsappMessageKey))
       {{ disclaimer }}
     </p>
 
-    <WhatsAppButton
-      v-if="showWhatsapp"
-      class="service-card__cta"
-      :message="message"
-      size="sm"
-      block
-    />
+    <div class="service-card__actions">
+      <NuxtLink
+        v-if="detailsTo"
+        :to="detailsTo"
+        class="service-card__details"
+      >
+        {{ t('seoCommon.learnMore') }}
+      </NuxtLink>
+
+      <WhatsAppButton
+        v-if="showWhatsapp"
+        class="service-card__cta"
+        :message="message"
+        size="sm"
+        block
+      />
+    </div>
   </article>
 </template>
 
@@ -137,8 +151,16 @@ const message = computed(() => t(props.service.whatsappMessageKey))
     @apply mb-4 rounded-xl bg-gold/15 px-3 py-2 text-xs font-medium leading-6 text-navy dark:text-ivory;
   }
 
+  &__actions {
+    @apply mt-auto flex flex-col gap-2;
+  }
+
+  &__details {
+    @apply text-center text-sm font-semibold text-gold underline-offset-4 hover:underline;
+  }
+
   &__cta {
-    @apply mt-auto;
+    @apply w-full;
   }
 }
 </style>

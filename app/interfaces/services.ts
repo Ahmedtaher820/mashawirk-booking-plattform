@@ -8,6 +8,8 @@ export interface ServiceItem {
   disclaimerKey?: string
   priority: ServicePriority
   whatsappMessageKey: string
+  /** Dedicated SEO landing path, e.g. /services/delivery */
+  landingPath?: string
 }
 
 export interface ServiceCardProps {
@@ -22,4 +24,6 @@ export interface CoverageItem {
   descriptionKey: string
   image: string
   international?: boolean
+  /** Dedicated city SEO landing path when available */
+  landingPath?: string
 }

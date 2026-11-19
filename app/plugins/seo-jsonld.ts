@@ -4,7 +4,7 @@
  */
 export default defineNuxtPlugin(() => {
   const config = useRuntimeConfig()
-  const siteUrl = String(config.public.siteUrl || 'https://mashawirk.com').replace(/\/$/, '')
+  const siteUrl = String(config.public.siteUrl || 'https://www.mashawirk.com').replace(/\/$/, '')
   const phone = String(config.public.contactPhoneDisplay || '+971 54 431 3696')
   const whatsapp = String(config.public.whatsappPhone || '971544313696')
 

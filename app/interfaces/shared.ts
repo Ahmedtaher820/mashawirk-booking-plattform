@@ -19,7 +19,8 @@ export interface SocialContactInfo {
 export interface SeoPageMeta {
   title: string
   description: string
-  keywords: string
+  /** Optional. Prefer natural keywords in titles/body — avoid stuffing this tag. */
+  keywords?: string
 }
 
 export interface QueryParams {

@@ -36,6 +36,7 @@ import { useServicesStore } from '~~/stores/servicesStore'
  **************************************/
 //#region Variables
 const { t } = useI18n()
+const localePath = useLocalePath()
 const servicesStore = useServicesStore()
 //#endregion
 
@@ -84,11 +85,13 @@ const coverageItems = computed(() => servicesStore.coverageItems)
     </div>
 
     <div class="home-coverage__grid">
-      <article
+      <component
+        :is="item.landingPath ? 'NuxtLink' : 'article'"
         v-for="item in coverageItems"
         :key="item.id"
         class="home-coverage__card reveal-on-scroll"
         :class="{ 'home-coverage__card--intl': item.international }"
+        v-bind="item.landingPath ? { to: localePath(item.landingPath) } : {}"
       >
         <img
           :src="item.image"
@@ -102,7 +105,7 @@ const coverageItems = computed(() => servicesStore.coverageItems)
           <h3>{{ t(item.titleKey) }}</h3>
           <p>{{ t(item.descriptionKey) }}</p>
         </div>
-      </article>
+      </component>
     </div>
   </section>
 </template>

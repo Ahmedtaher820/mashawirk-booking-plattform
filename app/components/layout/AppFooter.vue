@@ -18,6 +18,7 @@ import WhatsAppButton from '~/components/shared/WhatsAppButton.vue'
  **************************************/
 //#region General Imports
 import { useServicesStore } from '~~/stores/servicesStore'
+import { useSeoLandingsStore } from '~~/stores/seoLandingsStore'
 //#endregion
 
 /***************************************
@@ -40,6 +41,7 @@ const { t, locale } = useI18n()
 const localePath = useLocalePath()
 const config = useRuntimeConfig()
 const servicesStore = useServicesStore()
+const seoLandingsStore = useSeoLandingsStore()
 const year = new Date().getFullYear()
 //#endregion
 
@@ -98,8 +100,19 @@ const address = computed(() =>
           {{ t('footer.services') }}
         </h3>
         <ul>
-          <li v-for="service in servicesStore.allServices" :key="service.id">
-            {{ t(service.titleKey) }}
+          <li
+            v-for="service in servicesStore.allServices"
+            :key="service.id"
+          >
+            <NuxtLink
+              v-if="service.landingPath"
+              :to="localePath(service.landingPath)"
+            >
+              {{ t(service.titleKey) }}
+            </NuxtLink>
+            <template v-else>
+              {{ t(service.titleKey) }}
+            </template>
           </li>
         </ul>
       </div>
@@ -116,6 +129,19 @@ const address = computed(() =>
           <li><NuxtLink :to="localePath('/faq')">{{ t('nav.faq') }}</NuxtLink></li>
           <li><NuxtLink :to="localePath('/privacy')">{{ t('nav.privacy') }}</NuxtLink></li>
           <li><NuxtLink :to="localePath('/terms')">{{ t('nav.terms') }}</NuxtLink></li>
+        </ul>
+        <h3 class="app-footer__title app-footer__title--spaced">
+          {{ t('footer.cities') }}
+        </h3>
+        <ul>
+          <li
+            v-for="city in seoLandingsStore.cities"
+            :key="city.slug"
+          >
+            <NuxtLink :to="localePath(`/cities/${city.slug}`)">
+              {{ t(`${city.i18nPrefix}.navLabel`) }}
+            </NuxtLink>
+          </li>
         </ul>
       </div>
 
@@ -158,6 +184,10 @@ const address = computed(() =>
 
   &__title {
     @apply mb-3 text-sm font-bold text-gold;
+
+    &--spaced {
+      @apply mt-6;
+    }
   }
 
   ul {

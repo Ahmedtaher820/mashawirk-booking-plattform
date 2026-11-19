@@ -33,8 +33,7 @@ definePageMeta({
 useSeoPage(
   computed(() => ({
     title: t('contact.seoTitle'),
-    description: t('contact.seoDescription'),
-    keywords: t('contact.seoKeywords')
+    description: t('contact.seoDescription')
   }))
 )
 //#endregion

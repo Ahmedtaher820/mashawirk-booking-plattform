@@ -7,7 +7,7 @@ export const useSeoPage = (meta: MaybeRefOrGetter<SeoPageMeta>) => {
   const switchLocalePath = useSwitchLocalePath()
 
   const resolved = computed(() => toValue(meta))
-  const siteUrl = computed(() => String(config.public.siteUrl || 'https://mashawirk.com').replace(/\/$/, ''))
+  const siteUrl = computed(() => String(config.public.siteUrl || 'https://www.mashawirk.com').replace(/\/$/, ''))
   const canonicalPath = computed(() => route.path || '/')
   const canonicalUrl = computed(() => `${siteUrl.value}${canonicalPath.value === '/' ? '/' : canonicalPath.value}`)
   const ogImage = computed(() => `${siteUrl.value}/images/hero-960.webp`)
@@ -17,7 +17,8 @@ export const useSeoPage = (meta: MaybeRefOrGetter<SeoPageMeta>) => {
   useSeoMeta({
     title: () => resolved.value.title,
     description: () => resolved.value.description,
-    keywords: () => resolved.value.keywords,
+    // Do not dump keyword research into <meta name="keywords"> — Google ignores it
+    // and stuffing hurts trust. Keywords belong in title, H1, and body copy.
     ogTitle: () => resolved.value.title,
     ogDescription: () => resolved.value.description,
     ogType: 'website',

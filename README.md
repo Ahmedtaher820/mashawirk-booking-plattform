@@ -27,7 +27,7 @@ Open `http://127.0.0.1:4317`
 ## Useful env vars
 
 ```bash
-NUXT_PUBLIC_SITE_URL=https://mashawirk.com
+NUXT_PUBLIC_SITE_URL=https://www.mashawirk.com
 NUXT_PUBLIC_WHATSAPP_PHONE=971544313696
 NUXT_PUBLIC_CONTACT_PHONE_DISPLAY="+971 54 431 3696"
 ```
