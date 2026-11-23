@@ -9,7 +9,8 @@ const servicePages: SeoLandingDefinition[] = [
     imageAltKey: 'landingServices.delivery.imageAlt',
     i18nPrefix: 'landingServices.delivery',
     whatsappMessageKey: 'landingServices.delivery.whatsappMsg',
-    pointKeys: ['p1', 'p2', 'p3', 'p4', 'p5', 'p6'],
+    pointKeys: ['p1', 'p2', 'p3', 'p4', 'p5', 'p6', 'p7', 'p8'],
+    howKeys: ['how1', 'how2', 'how3'],
     related: [
       { to: '/services/courier', labelKey: 'landingServices.courier.navLabel' },
       { to: '/services/supplies', labelKey: 'landingServices.supplies.navLabel' },
@@ -24,7 +25,8 @@ const servicePages: SeoLandingDefinition[] = [
     imageAltKey: 'landingServices.supplies.imageAlt',
     i18nPrefix: 'landingServices.supplies',
     whatsappMessageKey: 'landingServices.supplies.whatsappMsg',
-    pointKeys: ['p1', 'p2', 'p3', 'p4', 'p5', 'p6'],
+    pointKeys: ['p1', 'p2', 'p3', 'p4', 'p5', 'p6', 'p7', 'p8'],
+    howKeys: ['how1', 'how2', 'how3'],
     related: [
       { to: '/services/delivery', labelKey: 'landingServices.delivery.navLabel' },
       { to: '/services/light-goods', labelKey: 'landingServices.lightGoods.navLabel' },
@@ -39,7 +41,8 @@ const servicePages: SeoLandingDefinition[] = [
     imageAltKey: 'landingServices.lightGoods.imageAlt',
     i18nPrefix: 'landingServices.lightGoods',
     whatsappMessageKey: 'landingServices.lightGoods.whatsappMsg',
-    pointKeys: ['p1', 'p2', 'p3', 'p4', 'p5', 'p6'],
+    pointKeys: ['p1', 'p2', 'p3', 'p4', 'p5', 'p6', 'p7', 'p8'],
+    howKeys: ['how1', 'how2', 'how3'],
     related: [
       { to: '/services/supplies', labelKey: 'landingServices.supplies.navLabel' },
       { to: '/services/delivery', labelKey: 'landingServices.delivery.navLabel' },
@@ -54,7 +57,8 @@ const servicePages: SeoLandingDefinition[] = [
     imageAltKey: 'landingServices.international.imageAlt',
     i18nPrefix: 'landingServices.international',
     whatsappMessageKey: 'landingServices.international.whatsappMsg',
-    pointKeys: ['p1', 'p2', 'p3', 'p4', 'p5', 'p6'],
+    pointKeys: ['p1', 'p2', 'p3', 'p4', 'p5', 'p6', 'p7', 'p8'],
+    howKeys: ['how1', 'how2', 'how3'],
     related: [
       { to: '/services/delivery', labelKey: 'landingServices.delivery.navLabel' },
       { to: '/services/courier', labelKey: 'landingServices.courier.navLabel' },
@@ -69,7 +73,8 @@ const servicePages: SeoLandingDefinition[] = [
     imageAltKey: 'landingServices.gifts.imageAlt',
     i18nPrefix: 'landingServices.gifts',
     whatsappMessageKey: 'landingServices.gifts.whatsappMsg',
-    pointKeys: ['p1', 'p2', 'p3', 'p4', 'p5', 'p6'],
+    pointKeys: ['p1', 'p2', 'p3', 'p4', 'p5', 'p6', 'p7', 'p8'],
+    howKeys: ['how1', 'how2', 'how3'],
     related: [
       { to: '/services/vip', labelKey: 'landingServices.vip.navLabel' },
       { to: '/services/delivery', labelKey: 'landingServices.delivery.navLabel' },
@@ -84,7 +89,8 @@ const servicePages: SeoLandingDefinition[] = [
     imageAltKey: 'landingServices.vip.imageAlt',
     i18nPrefix: 'landingServices.vip',
     whatsappMessageKey: 'landingServices.vip.whatsappMsg',
-    pointKeys: ['p1', 'p2', 'p3', 'p4', 'p5', 'p6'],
+    pointKeys: ['p1', 'p2', 'p3', 'p4', 'p5', 'p6', 'p7', 'p8'],
+    howKeys: ['how1', 'how2', 'how3'],
     related: [
       { to: '/services/gifts', labelKey: 'landingServices.gifts.navLabel' },
       { to: '/services/delivery', labelKey: 'landingServices.delivery.navLabel' },
@@ -99,7 +105,8 @@ const servicePages: SeoLandingDefinition[] = [
     imageAltKey: 'landingServices.pets.imageAlt',
     i18nPrefix: 'landingServices.pets',
     whatsappMessageKey: 'landingServices.pets.whatsappMsg',
-    pointKeys: ['p1', 'p2', 'p3', 'p4', 'p5', 'p6'],
+    pointKeys: ['p1', 'p2', 'p3', 'p4', 'p5', 'p6', 'p7', 'p8'],
+    howKeys: ['how1', 'how2', 'how3'],
     related: [
       { to: '/services/delivery', labelKey: 'landingServices.delivery.navLabel' },
       { to: '/services/car-lift', labelKey: 'landingServices.carLift.navLabel' },
@@ -114,7 +121,8 @@ const servicePages: SeoLandingDefinition[] = [
     imageAltKey: 'landingServices.carLift.imageAlt',
     i18nPrefix: 'landingServices.carLift',
     whatsappMessageKey: 'landingServices.carLift.whatsappMsg',
-    pointKeys: ['p1', 'p2', 'p3', 'p4', 'p5', 'p6'],
+    pointKeys: ['p1', 'p2', 'p3', 'p4', 'p5', 'p6', 'p7', 'p8'],
+    howKeys: ['how1', 'how2', 'how3'],
     related: [
       { to: '/services/delivery', labelKey: 'landingServices.delivery.navLabel' },
       { to: '/services/sales-rep', labelKey: 'landingServices.salesRep.navLabel' },
@@ -129,7 +137,8 @@ const servicePages: SeoLandingDefinition[] = [
     imageAltKey: 'landingServices.salesRep.imageAlt',
     i18nPrefix: 'landingServices.salesRep',
     whatsappMessageKey: 'landingServices.salesRep.whatsappMsg',
-    pointKeys: ['p1', 'p2', 'p3', 'p4', 'p5', 'p6'],
+    pointKeys: ['p1', 'p2', 'p3', 'p4', 'p5', 'p6', 'p7', 'p8'],
+    howKeys: ['how1', 'how2', 'how3'],
     related: [
       { to: '/services/courier', labelKey: 'landingServices.courier.navLabel' },
       { to: '/services/delivery', labelKey: 'landingServices.delivery.navLabel' },
@@ -144,7 +153,8 @@ const servicePages: SeoLandingDefinition[] = [
     imageAltKey: 'landingServices.courier.imageAlt',
     i18nPrefix: 'landingServices.courier',
     whatsappMessageKey: 'landingServices.courier.whatsappMsg',
-    pointKeys: ['p1', 'p2', 'p3', 'p4', 'p5', 'p6'],
+    pointKeys: ['p1', 'p2', 'p3', 'p4', 'p5', 'p6', 'p7', 'p8'],
+    howKeys: ['how1', 'how2', 'how3'],
     related: [
       { to: '/services/delivery', labelKey: 'landingServices.delivery.navLabel' },
       { to: '/services/sales-rep', labelKey: 'landingServices.salesRep.navLabel' },
@@ -162,7 +172,8 @@ const cityPages: SeoLandingDefinition[] = [
     imageAltKey: 'landingCities.dubai.imageAlt',
     i18nPrefix: 'landingCities.dubai',
     whatsappMessageKey: 'landingCities.dubai.whatsappMsg',
-    pointKeys: ['p1', 'p2', 'p3', 'p4', 'p5'],
+    pointKeys: ['p1', 'p2', 'p3', 'p4', 'p5', 'p6', 'p7'],
+    howKeys: ['how1', 'how2', 'how3'],
     related: [
       { to: '/services/delivery', labelKey: 'landingServices.delivery.navLabel' },
       { to: '/services/car-lift', labelKey: 'landingServices.carLift.navLabel' },
@@ -177,7 +188,8 @@ const cityPages: SeoLandingDefinition[] = [
     imageAltKey: 'landingCities.abuDhabi.imageAlt',
     i18nPrefix: 'landingCities.abuDhabi',
     whatsappMessageKey: 'landingCities.abuDhabi.whatsappMsg',
-    pointKeys: ['p1', 'p2', 'p3', 'p4', 'p5'],
+    pointKeys: ['p1', 'p2', 'p3', 'p4', 'p5', 'p6', 'p7'],
+    howKeys: ['how1', 'how2', 'how3'],
     related: [
       { to: '/services/delivery', labelKey: 'landingServices.delivery.navLabel' },
       { to: '/services/courier', labelKey: 'landingServices.courier.navLabel' },
@@ -192,7 +204,8 @@ const cityPages: SeoLandingDefinition[] = [
     imageAltKey: 'landingCities.sharjah.imageAlt',
     i18nPrefix: 'landingCities.sharjah',
     whatsappMessageKey: 'landingCities.sharjah.whatsappMsg',
-    pointKeys: ['p1', 'p2', 'p3', 'p4', 'p5'],
+    pointKeys: ['p1', 'p2', 'p3', 'p4', 'p5', 'p6', 'p7'],
+    howKeys: ['how1', 'how2', 'how3'],
     related: [
       { to: '/services/delivery', labelKey: 'landingServices.delivery.navLabel' },
       { to: '/services/car-lift', labelKey: 'landingServices.carLift.navLabel' },
@@ -207,7 +220,8 @@ const cityPages: SeoLandingDefinition[] = [
     imageAltKey: 'landingCities.ajman.imageAlt',
     i18nPrefix: 'landingCities.ajman',
     whatsappMessageKey: 'landingCities.ajman.whatsappMsg',
-    pointKeys: ['p1', 'p2', 'p3', 'p4', 'p5'],
+    pointKeys: ['p1', 'p2', 'p3', 'p4', 'p5', 'p6', 'p7'],
+    howKeys: ['how1', 'how2', 'how3'],
     related: [
       { to: '/services/delivery', labelKey: 'landingServices.delivery.navLabel' },
       { to: '/services/courier', labelKey: 'landingServices.courier.navLabel' },
@@ -222,7 +236,8 @@ const cityPages: SeoLandingDefinition[] = [
     imageAltKey: 'landingCities.rasAlKhaimah.imageAlt',
     i18nPrefix: 'landingCities.rasAlKhaimah',
     whatsappMessageKey: 'landingCities.rasAlKhaimah.whatsappMsg',
-    pointKeys: ['p1', 'p2', 'p3', 'p4', 'p5'],
+    pointKeys: ['p1', 'p2', 'p3', 'p4', 'p5', 'p6', 'p7'],
+    howKeys: ['how1', 'how2', 'how3'],
     related: [
       { to: '/services/delivery', labelKey: 'landingServices.delivery.navLabel' },
       { to: '/cities/fujairah', labelKey: 'landingCities.fujairah.navLabel' },
@@ -237,7 +252,8 @@ const cityPages: SeoLandingDefinition[] = [
     imageAltKey: 'landingCities.fujairah.imageAlt',
     i18nPrefix: 'landingCities.fujairah',
     whatsappMessageKey: 'landingCities.fujairah.whatsappMsg',
-    pointKeys: ['p1', 'p2', 'p3', 'p4', 'p5'],
+    pointKeys: ['p1', 'p2', 'p3', 'p4', 'p5', 'p6', 'p7'],
+    howKeys: ['how1', 'how2', 'how3'],
     related: [
       { to: '/services/delivery', labelKey: 'landingServices.delivery.navLabel' },
       { to: '/cities/ras-al-khaimah', labelKey: 'landingCities.rasAlKhaimah.navLabel' },
@@ -252,7 +268,8 @@ const cityPages: SeoLandingDefinition[] = [
     imageAltKey: 'landingCities.ummAlQuwain.imageAlt',
     i18nPrefix: 'landingCities.ummAlQuwain',
     whatsappMessageKey: 'landingCities.ummAlQuwain.whatsappMsg',
-    pointKeys: ['p1', 'p2', 'p3', 'p4', 'p5'],
+    pointKeys: ['p1', 'p2', 'p3', 'p4', 'p5', 'p6', 'p7'],
+    howKeys: ['how1', 'how2', 'how3'],
     related: [
       { to: '/services/delivery', labelKey: 'landingServices.delivery.navLabel' },
       { to: '/cities/ajman', labelKey: 'landingCities.ajman.navLabel' },

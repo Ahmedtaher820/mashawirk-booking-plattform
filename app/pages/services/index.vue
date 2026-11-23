@@ -40,6 +40,13 @@ useSeoPage(
     description: t('services.seoDescription')
   }))
 )
+
+useBreadcrumbJsonLd(
+  computed(() => [
+    { name: t('nav.home'), path: localePath('/') },
+    { name: t('nav.services'), path: localePath('/services') }
+  ])
+)
 //#endregion
 
 /***************************************

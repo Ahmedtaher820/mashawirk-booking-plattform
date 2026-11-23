@@ -21,6 +21,12 @@ export interface SeoPageMeta {
   description: string
   /** Optional. Prefer natural keywords in titles/body — avoid stuffing this tag. */
   keywords?: string
+  /** Absolute URL or site-relative path for og/twitter image (default /images/og-default.jpg). */
+  ogImagePath?: string
+  ogImageWidth?: number
+  ogImageHeight?: number
+  ogImageType?: string
+  ogImageAlt?: string
 }
 
 export interface QueryParams {

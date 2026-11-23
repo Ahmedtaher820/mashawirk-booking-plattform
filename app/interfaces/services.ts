@@ -22,6 +22,8 @@ export interface CoverageItem {
   id: string
   titleKey: string
   descriptionKey: string
+  /** Keyword-rich image ALT i18n key (e.g. coverage.dubaiAlt) */
+  imageAltKey: string
   image: string
   international?: boolean
   /** Dedicated city SEO landing path when available */

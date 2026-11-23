@@ -105,6 +105,7 @@ export const useServicesStore = defineStore('services', () => {
       id: 'dubai',
       titleKey: 'coverage.dubai',
       descriptionKey: 'coverage.dubaiText',
+      imageAltKey: 'coverage.dubaiAlt',
       image: '/images/coverage/dubai-card.webp',
       landingPath: cityLandingPathById.dubai
     },
@@ -112,6 +113,7 @@ export const useServicesStore = defineStore('services', () => {
       id: 'abudhabi',
       titleKey: 'coverage.abudhabi',
       descriptionKey: 'coverage.abudhabiText',
+      imageAltKey: 'coverage.abudhabiAlt',
       image: '/images/coverage/abudhabi-card.webp',
       landingPath: cityLandingPathById.abudhabi
     },
@@ -119,6 +121,7 @@ export const useServicesStore = defineStore('services', () => {
       id: 'sharjah',
       titleKey: 'coverage.sharjah',
       descriptionKey: 'coverage.sharjahText',
+      imageAltKey: 'coverage.sharjahAlt',
       image: '/images/coverage/sharjah-card.webp',
       landingPath: cityLandingPathById.sharjah
     },
@@ -126,6 +129,7 @@ export const useServicesStore = defineStore('services', () => {
       id: 'ajman',
       titleKey: 'coverage.ajman',
       descriptionKey: 'coverage.ajmanText',
+      imageAltKey: 'coverage.ajmanAlt',
       image: '/images/coverage/ajman-card.webp',
       landingPath: cityLandingPathById.ajman
     },
@@ -133,6 +137,7 @@ export const useServicesStore = defineStore('services', () => {
       id: 'rak',
       titleKey: 'coverage.rak',
       descriptionKey: 'coverage.rakText',
+      imageAltKey: 'coverage.rakAlt',
       image: '/images/coverage/uae-card.webp',
       landingPath: cityLandingPathById.rak
     },
@@ -140,6 +145,7 @@ export const useServicesStore = defineStore('services', () => {
       id: 'fujairah',
       titleKey: 'coverage.fujairah',
       descriptionKey: 'coverage.fujairahText',
+      imageAltKey: 'coverage.fujairahAlt',
       image: '/images/coverage/uae-card.webp',
       landingPath: cityLandingPathById.fujairah
     },
@@ -147,6 +153,7 @@ export const useServicesStore = defineStore('services', () => {
       id: 'uaq',
       titleKey: 'coverage.uaq',
       descriptionKey: 'coverage.uaqText',
+      imageAltKey: 'coverage.uaqAlt',
       image: '/images/coverage/uae-card.webp',
       landingPath: cityLandingPathById.uaq
     },
@@ -154,6 +161,7 @@ export const useServicesStore = defineStore('services', () => {
       id: 'saudi',
       titleKey: 'coverage.saudi',
       descriptionKey: 'coverage.internationalNote',
+      imageAltKey: 'coverage.saudiAlt',
       image: '/images/coverage/saudi-card.webp',
       international: true,
       landingPath: '/services/international'
@@ -162,6 +170,7 @@ export const useServicesStore = defineStore('services', () => {
       id: 'oman',
       titleKey: 'coverage.oman',
       descriptionKey: 'coverage.internationalNote',
+      imageAltKey: 'coverage.omanAlt',
       image: '/images/coverage/oman-card.webp',
       international: true,
       landingPath: '/services/international'
@@ -170,6 +179,7 @@ export const useServicesStore = defineStore('services', () => {
       id: 'qatar',
       titleKey: 'coverage.qatar',
       descriptionKey: 'coverage.internationalNote',
+      imageAltKey: 'coverage.qatarAlt',
       image: '/images/coverage/qatar-card.webp',
       international: true,
       landingPath: '/services/international'

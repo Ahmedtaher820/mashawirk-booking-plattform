@@ -29,11 +29,53 @@ definePageMeta({
   title: 'FAQ Page'
 })
 
+const localePath = useLocalePath()
+
 useSeoPage(
   computed(() => ({
     title: t('faq.seoTitle'),
     description: t('faq.seoDescription')
   }))
+)
+
+useBreadcrumbJsonLd(
+  computed(() => [
+    { name: t('nav.home'), path: localePath('/') },
+    { name: t('nav.faq'), path: localePath('/faq') }
+  ])
+)
+
+useJsonLd(
+  computed(() => ({
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: t('faq.q1'),
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: t('faq.a1')
+        }
+      },
+      {
+        '@type': 'Question',
+        name: t('faq.q2'),
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: t('faq.a2')
+        }
+      },
+      {
+        '@type': 'Question',
+        name: t('faq.q3'),
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: t('faq.a3')
+        }
+      }
+    ]
+  })),
+  'jsonld-faq'
 )
 //#endregion
 

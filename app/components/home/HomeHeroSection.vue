@@ -92,7 +92,7 @@ const highlights = computed(() => homeStore.highlights)
 
 <template>
   <section class="home-hero">
-    <div class="home-hero__media" aria-hidden="true">
+    <div class="home-hero__media">
       <div class="home-hero__media-frame">
         <picture>
           <source
@@ -107,7 +107,7 @@ const highlights = computed(() => homeStore.highlights)
           >
           <img
             src="/images/hero-640.webp"
-            alt=""
+            :alt="t('home.heroImageAlt')"
             width="640"
             height="361"
             class="home-hero__image"

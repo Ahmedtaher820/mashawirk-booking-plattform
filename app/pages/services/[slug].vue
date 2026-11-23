@@ -54,11 +54,54 @@ if (!landing.value) {
   throw createError({ statusCode: 404, statusMessage: 'Service page not found' })
 }
 
+const localePath = useLocalePath()
+const config = useRuntimeConfig()
+const siteUrl = computed(() =>
+  String(config.public.siteUrl || 'https://www.mashawirk.com').replace(/\/$/, '')
+)
+
 useSeoPage(
   computed(() => ({
     title: t(`${landing.value!.i18nPrefix}.seoTitle`),
     description: t(`${landing.value!.i18nPrefix}.seoDescription`)
   }))
+)
+
+useBreadcrumbJsonLd(
+  computed(() => [
+    { name: t('nav.home'), path: localePath('/') },
+    { name: t('nav.services'), path: localePath('/services') },
+    {
+      name: t(`${landing.value!.i18nPrefix}.navLabel`),
+      path: localePath(`/services/${landing.value!.slug}`)
+    }
+  ])
+)
+
+useJsonLd(
+  computed(() => {
+    const prefix = landing.value!.i18nPrefix
+    const pageUrl = `${siteUrl.value}${localePath(`/services/${landing.value!.slug}`)}`
+    return [
+      {
+        '@type': 'Service',
+        '@id': `${pageUrl}#service`,
+        name: t(`${prefix}.h1`),
+        description: t(`${prefix}.seoDescription`),
+        url: pageUrl,
+        serviceType: t(`${prefix}.navLabel`),
+        provider: {
+          '@id': `${siteUrl.value}/#business`
+        },
+        areaServed: {
+          '@type': 'Country',
+          name: 'United Arab Emirates'
+        },
+        image: `${siteUrl.value}${landing.value!.image}`
+      }
+    ]
+  }),
+  'jsonld-service'
 )
 //#endregion
 

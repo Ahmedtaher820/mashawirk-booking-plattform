@@ -78,6 +78,10 @@ onMounted(() => {
 
 <template>
   <div class="default-layout">
+    <a class="skip-link" href="#main-content">
+      {{ t('nav.skipToContent') }}
+    </a>
+
     <AppHeader />
 
     <main id="main-content" class="default-layout__main">

@@ -1,0 +1,54 @@
+# Mashawirk (مشاويرك)
+
+> UAE delivery and mobility booking platform: parcels, courier, car lift, private trips, and related services across the Emirates, with international options to Saudi Arabia, Oman, and Qatar. Book via WhatsApp. Based in Al Qusais, Dubai.
+
+Site: https://www.mashawirk.com
+Default language: Arabic (ar-AE). English: https://www.mashawirk.com/en
+Sitemap: https://www.mashawirk.com/sitemap.xml
+
+## Contact
+
+- WhatsApp: https://wa.me/971544313696
+- Phone: +971 54 431 3696
+- Address: Al Qusais, Dubai, UAE
+- Contact page (AR): https://www.mashawirk.com/contact
+- Contact page (EN): https://www.mashawirk.com/en/contact
+
+## Core pages
+
+- Home (AR): https://www.mashawirk.com/
+- Home (EN): https://www.mashawirk.com/en
+- Services hub (AR): https://www.mashawirk.com/services
+- Services hub (EN): https://www.mashawirk.com/en/services
+- FAQ (AR): https://www.mashawirk.com/faq
+- FAQ (EN): https://www.mashawirk.com/en/faq
+- About (AR): https://www.mashawirk.com/about
+- About (EN): https://www.mashawirk.com/en/about
+
+## Services (AR / EN)
+
+- Parcel & order delivery: https://www.mashawirk.com/services/delivery | https://www.mashawirk.com/en/services/delivery
+- Supplies delivery: https://www.mashawirk.com/services/supplies | https://www.mashawirk.com/en/services/supplies
+- Light goods / pickup: https://www.mashawirk.com/services/light-goods | https://www.mashawirk.com/en/services/light-goods
+- International delivery: https://www.mashawirk.com/services/international | https://www.mashawirk.com/en/services/international
+- Gift delivery: https://www.mashawirk.com/services/gifts | https://www.mashawirk.com/en/services/gifts
+- VIP delivery: https://www.mashawirk.com/services/vip | https://www.mashawirk.com/en/services/vip
+- Pet transport: https://www.mashawirk.com/services/pets | https://www.mashawirk.com/en/services/pets
+- Car lift / staff transport: https://www.mashawirk.com/services/car-lift | https://www.mashawirk.com/en/services/car-lift
+- Field sales / marketing rep: https://www.mashawirk.com/services/sales-rep | https://www.mashawirk.com/en/services/sales-rep
+- Courier / domestic shipping: https://www.mashawirk.com/services/courier | https://www.mashawirk.com/en/services/courier
+
+## Cities (AR / EN)
+
+- Dubai: https://www.mashawirk.com/cities/dubai | https://www.mashawirk.com/en/cities/dubai
+- Abu Dhabi: https://www.mashawirk.com/cities/abu-dhabi | https://www.mashawirk.com/en/cities/abu-dhabi
+- Sharjah: https://www.mashawirk.com/cities/sharjah | https://www.mashawirk.com/en/cities/sharjah
+- Ajman: https://www.mashawirk.com/cities/ajman | https://www.mashawirk.com/en/cities/ajman
+- Ras Al Khaimah: https://www.mashawirk.com/cities/ras-al-khaimah | https://www.mashawirk.com/en/cities/ras-al-khaimah
+- Fujairah: https://www.mashawirk.com/cities/fujairah | https://www.mashawirk.com/en/cities/fujairah
+- Umm Al Quwain: https://www.mashawirk.com/cities/umm-al-quwain | https://www.mashawirk.com/en/cities/umm-al-quwain
+
+## Optional
+
+- Privacy: https://www.mashawirk.com/privacy | https://www.mashawirk.com/en/privacy
+- Terms: https://www.mashawirk.com/terms | https://www.mashawirk.com/en/terms

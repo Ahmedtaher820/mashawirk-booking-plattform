@@ -36,7 +36,7 @@ const props = defineProps<SeoLandingViewProps>()
  **** Section Variables Declaration ****
  **************************************/
 //#region Variables
-const { t } = useI18n()
+const { t, te } = useI18n()
 const localePath = useLocalePath()
 const prefix = computed(() => props.landing.i18nPrefix)
 //#endregion
@@ -55,7 +55,25 @@ const points = computed(() =>
   props.landing.pointKeys.map((key) => t(`${prefix.value}.${key}`))
 )
 
+const howSteps = computed(() =>
+  (props.landing.howKeys || []).map((key) => t(`${prefix.value}.${key}`)).filter(Boolean)
+)
+
+const faqItems = computed(() => {
+  const items: Array<{ q: string; a: string }> = []
+  for (let i = 1; i <= 3; i += 1) {
+    const qKey = `${prefix.value}.faqQ${i}`
+    const aKey = `${prefix.value}.faqA${i}`
+    if (te(qKey) && te(aKey)) {
+      items.push({ q: t(qKey), a: t(aKey) })
+    }
+  }
+  return items
+})
+
 const whatsappMessage = computed(() => t(props.landing.whatsappMessageKey))
+const hasCoverage = computed(() => te(`${prefix.value}.coverageText`))
+const hasOffer = computed(() => te(`${prefix.value}.offerText`))
 //#endregion
 
 /***************************************
@@ -91,6 +109,7 @@ const whatsappMessage = computed(() => t(props.landing.whatsappMessageKey))
         <WhatsAppButton
           size="lg"
           :message="whatsappMessage"
+          :label-key="`${prefix}.ctaButton`"
         />
       </div>
       <figure class="seo-landing__media">
@@ -105,12 +124,26 @@ const whatsappMessage = computed(() => t(props.landing.whatsappMessageKey))
       </figure>
     </header>
 
+    <section
+      v-if="hasOffer"
+      class="seo-landing__offer"
+      aria-labelledby="seo-offer"
+    >
+      <h2 id="seo-offer">
+        {{ t(`${prefix}.offerTitle`) }}
+      </h2>
+      <p>{{ t(`${prefix}.offerText`) }}</p>
+    </section>
+
     <section class="seo-landing__body" aria-labelledby="seo-overview">
       <h2 id="seo-overview">
         {{ t(`${prefix}.overviewTitle`) }}
       </h2>
       <p>{{ t(`${prefix}.body1`) }}</p>
       <p>{{ t(`${prefix}.body2`) }}</p>
+      <p v-if="te(`${prefix}.body3`)">
+        {{ t(`${prefix}.body3`) }}
+      </p>
     </section>
 
     <section class="seo-landing__points" aria-labelledby="seo-points">
@@ -127,6 +160,30 @@ const whatsappMessage = computed(() => t(props.landing.whatsappMessageKey))
       </ul>
     </section>
 
+    <section
+      v-if="howSteps.length"
+      class="seo-landing__how"
+      aria-labelledby="seo-how"
+    >
+      <h2 id="seo-how">
+        {{ t(`${prefix}.howTitle`) }}
+      </h2>
+      <ol>
+        <li
+          v-for="(step, index) in howSteps"
+          :key="`${landing.slug}-how-${index}`"
+        >
+          <span class="seo-landing__step-num">{{ index + 1 }}</span>
+          <p>{{ step }}</p>
+        </li>
+      </ol>
+      <WhatsAppButton
+        size="md"
+        :message="whatsappMessage"
+        :label-key="`${prefix}.ctaButton`"
+      />
+    </section>
+
     <section class="seo-landing__audience" aria-labelledby="seo-audience">
       <div>
         <h2 id="seo-audience">
@@ -137,6 +194,36 @@ const whatsappMessage = computed(() => t(props.landing.whatsappMessageKey))
       <div>
         <h2>{{ t(`${prefix}.processTitle`) }}</h2>
         <p>{{ t(`${prefix}.processText`) }}</p>
+      </div>
+    </section>
+
+    <section
+      v-if="hasCoverage"
+      class="seo-landing__coverage"
+      aria-labelledby="seo-coverage"
+    >
+      <h2 id="seo-coverage">
+        {{ t(`${prefix}.coverageTitle`) }}
+      </h2>
+      <p>{{ t(`${prefix}.coverageText`) }}</p>
+    </section>
+
+    <section
+      v-if="faqItems.length"
+      class="seo-landing__faq"
+      aria-labelledby="seo-faq"
+    >
+      <h2 id="seo-faq">
+        {{ t(`${prefix}.faqTitle`) }}
+      </h2>
+      <div class="seo-landing__faq-list">
+        <article
+          v-for="(item, index) in faqItems"
+          :key="`${landing.slug}-faq-${index}`"
+        >
+          <h3>{{ item.q }}</h3>
+          <p>{{ item.a }}</p>
+        </article>
       </div>
     </section>
 
@@ -166,6 +253,7 @@ const whatsappMessage = computed(() => t(props.landing.whatsappMessageKey))
       <WhatsAppButton
         size="lg"
         :message="whatsappMessage"
+        :label-key="`${prefix}.ctaButton`"
       />
     </section>
   </article>
@@ -205,6 +293,10 @@ const whatsappMessage = computed(() => t(props.landing.whatsappMessageKey))
 
   &__body,
   &__points,
+  &__offer,
+  &__how,
+  &__coverage,
+  &__faq,
   &__audience > div,
   &__related {
     @apply rounded-3xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6 shadow-soft md:p-8;
@@ -212,10 +304,18 @@ const whatsappMessage = computed(() => t(props.landing.whatsappMessageKey))
 
   &__body,
   &__points,
+  &__offer,
+  &__how,
+  &__coverage,
+  &__faq,
   &__audience,
   &__related {
     h2 {
       @apply mb-3 text-xl font-semibold text-[var(--color-text)] md:text-2xl;
+    }
+
+    h3 {
+      @apply mb-2 text-base font-semibold text-[var(--color-text)];
     }
 
     p {
@@ -227,12 +327,38 @@ const whatsappMessage = computed(() => t(props.landing.whatsappMessageKey))
     @apply mt-4;
   }
 
+  &__offer {
+    @apply border-gold/30 bg-gold/5;
+  }
+
   &__points ul {
     @apply list-disc space-y-3 pe-5 text-sm leading-7 text-[var(--color-text-muted)];
   }
 
+  &__how {
+    ol {
+      @apply mb-5 space-y-4;
+    }
+
+    li {
+      @apply flex gap-3 text-sm leading-7 text-[var(--color-text-muted)];
+    }
+  }
+
+  &__step-num {
+    @apply flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-navy text-sm font-semibold text-gold;
+  }
+
   &__audience {
     @apply grid gap-4 md:grid-cols-2;
+  }
+
+  &__faq-list {
+    @apply space-y-4;
+
+    article {
+      @apply rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg)] p-4;
+    }
   }
 
   &__related ul {

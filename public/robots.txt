@@ -6,5 +6,8 @@ Disallow: /api/
 Disallow: /_nuxt/
 Disallow: /_payload.json
 
+# LLM / AI crawler site summary
+# https://www.mashawirk.com/llms.txt
+
 Sitemap: https://www.mashawirk.com/sitemap.xml
 Host: https://www.mashawirk.com

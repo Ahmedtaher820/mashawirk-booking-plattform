@@ -10,7 +10,14 @@ export const useSeoPage = (meta: MaybeRefOrGetter<SeoPageMeta>) => {
   const siteUrl = computed(() => String(config.public.siteUrl || 'https://www.mashawirk.com').replace(/\/$/, ''))
   const canonicalPath = computed(() => route.path || '/')
   const canonicalUrl = computed(() => `${siteUrl.value}${canonicalPath.value === '/' ? '/' : canonicalPath.value}`)
-  const ogImage = computed(() => `${siteUrl.value}/images/hero-960.webp`)
+  // Dedicated 1200×630 social crop (JPG for broad crawler support)
+  const defaultOgPath = String(config.public.ogImagePath || '/images/og-default.jpg')
+  const ogImagePath = computed(() => resolved.value.ogImagePath || defaultOgPath)
+  const ogImage = computed(() => {
+    const path = ogImagePath.value
+    if (path.startsWith('http')) return path
+    return `${siteUrl.value}${path.startsWith('/') ? '' : '/'}${path}`
+  })
   const arPath = computed(() => switchLocalePath('ar') || '/')
   const enPath = computed(() => switchLocalePath('en') || '/en')
 
@@ -25,6 +32,11 @@ export const useSeoPage = (meta: MaybeRefOrGetter<SeoPageMeta>) => {
     ogUrl: () => canonicalUrl.value,
     ogLocale: () => (locale.value === 'ar' ? 'ar_AE' : 'en_AE'),
     ogImage: () => ogImage.value,
+    ogImageSecureUrl: () => ogImage.value,
+    ogImageWidth: () => resolved.value.ogImageWidth ?? 1200,
+    ogImageHeight: () => resolved.value.ogImageHeight ?? 630,
+    ogImageType: () => resolved.value.ogImageType || 'image/jpeg',
+    ogImageAlt: () => resolved.value.ogImageAlt || resolved.value.title,
     twitterCard: 'summary_large_image',
     twitterTitle: () => resolved.value.title,
     twitterDescription: () => resolved.value.description,

@@ -33,6 +33,18 @@ export default defineNuxtConfig({
         {
           name: 'google-site-verification',
           content: 'XCioJI4fU0GX2kVOJLk9TKkYDDUFW95gHkAhKxrL0rI'
+        },
+        // Absolute default share image (1200×630); pages override via useSeoPage
+        {
+          property: 'og:image',
+          content: `${process.env.NUXT_PUBLIC_SITE_URL || 'https://www.mashawirk.com'}/images/og-default.jpg`
+        },
+        { property: 'og:image:width', content: '1200' },
+        { property: 'og:image:height', content: '630' },
+        { property: 'og:image:type', content: 'image/jpeg' },
+        {
+          name: 'twitter:image',
+          content: `${process.env.NUXT_PUBLIC_SITE_URL || 'https://www.mashawirk.com'}/images/og-default.jpg`
         }
       ]
     }
@@ -41,6 +53,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://www.mashawirk.com',
+      ogImagePath: process.env.NUXT_PUBLIC_OG_IMAGE_PATH || '/images/og-default.jpg',
       whatsappPhone: process.env.NUXT_PUBLIC_WHATSAPP_PHONE || '971544313696',
       contactPhoneDisplay: process.env.NUXT_PUBLIC_CONTACT_PHONE_DISPLAY || '+971 54 431 3696',
       companyAddressAr: 'القصيص، دبي',

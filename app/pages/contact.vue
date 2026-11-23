@@ -30,11 +30,20 @@ definePageMeta({
   title: 'Contact Page'
 })
 
+const localePath = useLocalePath()
+
 useSeoPage(
   computed(() => ({
     title: t('contact.seoTitle'),
     description: t('contact.seoDescription')
   }))
+)
+
+useBreadcrumbJsonLd(
+  computed(() => [
+    { name: t('nav.home'), path: localePath('/') },
+    { name: t('nav.contact'), path: localePath('/contact') }
+  ])
 )
 //#endregion
 
