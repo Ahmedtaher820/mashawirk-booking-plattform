@@ -10,8 +10,9 @@
  **************************************/
 //#region Imports Components
 import AppHeader from '~/components/layout/AppHeader.vue'
+import AppFooter from '~/components/layout/AppFooter.vue'
 import PwaInstallGuide from '~/components/shared/PwaInstallGuide.vue'
-// Footer / FAB stay Lazy*; install guide must be eager so the modal can open
+// FAB stays Lazy*; footer + install guide are eager (footer must SSR for crawl/UX)
 //#endregion
 
 /***************************************
@@ -78,13 +79,17 @@ onMounted(() => {
 
 <template>
   <div class="default-layout">
+    <a class="skip-link" href="#main-content">
+      {{ t('nav.skipToContent') }}
+    </a>
+
     <AppHeader />
 
     <main id="main-content" class="default-layout__main">
       <slot />
     </main>
 
-    <LazyAppFooter hydrate-on-visible />
+    <AppFooter />
 
     <ClientOnly>
       <LazyStickyMobileCta hydrate-on-idle />
